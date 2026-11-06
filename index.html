@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101c22" />
+  <title>Everfall — The Shattered Coast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="world" aria-label="Everfall game world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <button class="brand" id="brandButton" aria-label="Open game menu"><span class="brand-mark">✦</span><span><b>EVERFALL</b><small>THE SHATTERED COAST</small></span></button>
+      <div class="location"><span class="location-dot"></span><span><b>Whispering Reach</b><small>WESTERN FRONTIER · DAY 12</small></span></div>
+      <div class="top-actions"><div class="ping"><i></i> ONLINE</div><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button><button class="icon-btn" id="menuBtn" aria-label="Open menu">☰</button></div>
+    </header>
+    <section class="player-card panel">
+      <div class="avatar">✦</div><div class="player-info"><div class="player-name">Aerin <span>LVL 4</span></div><div class="bar-label"><span>VITALITY</span><span id="hpText">84 / 100</span></div><div class="meter hp"><i id="hpBar"></i></div><div class="bar-label mana-label"><span>FOCUS</span><span>62 / 80</span></div><div class="meter mana"><i></i></div></div>
+    </section>
+    <section class="quest-card panel" id="questCard">
+      <div class="quest-heading"><span class="quest-icon">⚑</span><div><small>FIELD JOURNAL · ACTIVE</small><b>A light in the marsh</b></div><button id="questToggle" aria-label="Collapse quest">⌃</button></div>
+      <div class="quest-body" id="questBody"><p>The old watchtower has gone dark. Gather moon herbs for the keeper, and clear the nearby slimes.</p><div class="objective"><span class="check" id="herbCheck">◇</span><span>Collect moon herbs</span><b id="herbCount">0 / 3</b></div><div class="objective"><span class="check" id="slimeCheck">◇</span><span>Defeat marsh slimes</span><b id="slimeCount">0 / 2</b></div><div class="quest-reward">REWARD <b>120 XP</b><span>·</span><b>18 coin</b></div></div>
+    </section>
+    <aside class="minimap panel"><div class="map-title"><span>✦</span> REACH <small>N</small></div><canvas id="mapCanvas" width="156" height="112"></canvas><div class="map-foot"><i></i> You are here <span>●</span></div></aside>
+    <div class="toast" id="toast"></div>
+    <div class="combat-float" id="combatFloat"></div>
+    <footer class="bottom-ui">
+      <div class="control-side"><div class="joystick" id="joystick"><div class="joy-ring"><div class="joy-knob" id="joyKnob"></div></div></div><span class="control-hint">DRAG TO MOVE</span></div>
+      <div class="hotbar panel"><div class="hotbar-label">QUICK SLOTS</div><button class="slot active" data-slot="0"><span class="slot-art potion">✦</span><kbd>1</kbd><small>HEALING TONIC</small></button><button class="slot" data-slot="1"><span class="slot-art herb">❧</span><kbd>2</kbd><small>MOON HERB</small></button><button class="slot" data-slot="2"><span class="slot-art rune">ᚱ</span><kbd>3</kbd><small>EMBER RUNE</small></button><button class="slot" data-slot="3"><span class="slot-art bag">◈</span><kbd>4</kbd><small>BACKPACK</small></button></div>
+      <div class="action-side"><button class="action interact" id="interactBtn"><span>✧</span><small>INTERACT</small></button><button class="action attack" id="attackBtn"><span>⚔</span><small>ATTACK</small></button></div>
+    </footer>
+    <div class="mobile-tip" id="mobileTip">Tap the world to travel · Approach herbs and press <b>Interact</b></div>
+    <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal panel"><button class="modal-close" id="modalClose">×</button><div class="modal-emblem">✦</div><small>WELCOME, TRAVELER</small><h1>Whispering Reach</h1><p>A quiet frontier at the edge of a restless sea. The old watchtower has fallen dark, and something stirs in the marsh.</p><div class="modal-rule"></div><div class="menu-row"><span>✧ &nbsp; Find moon herbs</span><b>0 / 3</b></div><div class="menu-row"><span>⚔ &nbsp; Clear the slimes</span><b>0 / 2</b></div><button class="resume-btn" id="resumeBtn">RETURN TO THE REACH <span>→</span></button><div class="modal-foot">A PERSISTENT WORLD · EST. YEAR 812</div></section></div>
+    <div class="inventory-backdrop hidden" id="inventoryBackdrop"><section class="inventory panel"><button class="modal-close" id="inventoryClose">×</button><small>YOUR BELONGINGS</small><h2>Adventurer's pack</h2><div class="inventory-grid" id="inventoryGrid"></div><p class="inventory-note">Tap an item to use it. Your journey is saved automatically.</p></section></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
