@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#101017">
+  <meta name="description" content="A pocket-sized arcane arena duel. Dodge, cast, and survive the storm.">
+  <title>MageStorm — Arena Duel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="MageStorm arena game">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">✦</div><div><span class="eyebrow">THE ARENA IS CALLING</span><h1>MAGE<span>STORM</span></h1></div></div>
+      <button class="icon-button" id="pauseButton" aria-label="Pause game" title="Pause">Ⅱ</button>
+    </header>
+    <section class="status-row" aria-label="Player status">
+      <div class="meter-card"><div class="meter-label"><span>VITALITY</span><strong id="hpText">100</strong></div><div class="meter"><i id="hpMeter"></i></div></div>
+      <div class="meter-card mana-card"><div class="meter-label"><span>MANA</span><strong id="manaText">100</strong></div><div class="meter"><i id="manaMeter"></i></div></div>
+      <div class="wave-card"><span>WAVE</span><strong id="waveText">01</strong></div>
+    </section>
+    <section class="arena-wrap" id="arenaWrap">
+      <canvas id="game" aria-label="Top-down magic arena. Move with the joystick and cast spells." tabindex="0"></canvas>
+      <div class="arena-tag"><span class="live-dot"></span><span id="arenaName">CATHEDRAL REVIVAL</span><span class="tag-divider">/</span><span id="enemyCount">READY</span></div>
+      <div class="toast" id="toast" aria-live="polite">A storm gathers...</div>
+      <div class="overlay" id="overlay">
+        <div class="overlay-card">
+          <div class="crest">✦</div><p class="eyebrow" id="overlayEyebrow">A POCKET-SIZED DUEL</p>
+          <h2 id="overlayTitle">Enter the<br><em>Storm.</em></h2>
+          <p class="overlay-copy" id="overlayCopy">Three spells. Endless waves. How long can you hold the Cathedral?</p>
+          <button class="primary-button" id="overlayAction">ENTER THE ARENA <span>↗</span></button>
+          <p class="hint" id="overlayHint">MOVE <b>WASD</b> / JOYSTICK &nbsp;·&nbsp; CAST <b>1–3</b> / SPELL BUTTONS</p>
+        </div>
+      </div>
+    </section>
+    <footer class="controls">
+      <div class="joystick-column"><span class="control-caption">MOVE</span><div class="joystick" id="joystick" aria-label="Movement joystick"><div class="joy-ring"><div class="joy-knob" id="joyKnob"></div></div></div></div>
+      <div class="spell-column"><div class="spell-heading"><span class="control-caption">SPELLBOOK</span><span class="cooldown-note">TAP TO CAST</span></div><div class="spell-list">
+        <button class="spell-button selected" data-spell="fire" aria-label="Cast Fireball"><span class="spell-icon fire">✹</span><span class="spell-name">Fireball</span><span class="spell-key">1</span></button>
+        <button class="spell-button" data-spell="ice" aria-label="Cast Ice Dart"><span class="spell-icon ice">❄</span><span class="spell-name">Ice Dart</span><span class="spell-key">2</span></button>
+        <button class="spell-button" data-spell="void" aria-label="Cast Void Orb"><span class="spell-icon void">◉</span><span class="spell-name">Void Orb</span><span class="spell-key">3</span></button>
+      </div></div>
+    </footer>
+    <div class="bottom-note"><span id="scoreText">BEST 0000</span><span>✦ &nbsp;SURVIVE THE STORM</span><button id="soundButton" aria-label="Toggle sound">♫</button></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
