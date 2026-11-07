@@ -19,6 +19,7 @@
       <div class="meter-card mana-card"><div class="meter-label"><span>MANA</span><strong id="manaText">100</strong></div><div class="meter"><i id="manaMeter"></i></div></div>
       <div class="wave-card"><span>WAVE</span><strong id="waveText">01</strong></div>
     </section>
+    <div class="xp-row" aria-label="Experience progress"><strong id="levelText">LV 1</strong><div class="xp-track"><i id="xpMeter"></i></div><span id="xpText">0/55 XP</span></div>
     <section class="arena-wrap" id="arenaWrap">
       <canvas id="game" aria-label="Top-down magic arena. Move with the joystick and cast spells." tabindex="0"></canvas>
       <div class="arena-tag"><span class="live-dot"></span><span id="arenaName">CATHEDRAL REVIVAL</span><span class="tag-divider">/</span><span id="enemyCount">READY</span></div>
@@ -39,6 +40,7 @@
         <button class="spell-button selected" data-spell="fire" aria-label="Cast Fireball"><span class="spell-icon fire">✹</span><span class="spell-name">Fireball</span><span class="spell-key">1</span></button>
         <button class="spell-button" data-spell="ice" aria-label="Cast Ice Dart"><span class="spell-icon ice">❄</span><span class="spell-name">Ice Dart</span><span class="spell-key">2</span></button>
         <button class="spell-button" data-spell="void" aria-label="Cast Void Orb"><span class="spell-icon void">◉</span><span class="spell-name">Void Orb</span><span class="spell-key">3</span></button>
+        <button class="spell-button locked" data-spell="earth" aria-label="Earth Bolt, unlocks at level 3" title="Unlocks at level 3"><span class="spell-icon earth">⬟</span><span class="spell-name">Earth Bolt</span><span class="spell-key">4</span></button>
       </div></div>
     </footer>
     <div class="bottom-note"><span id="scoreText">BEST 0000</span><span>✦ &nbsp;SURVIVE THE STORM</span><button id="soundButton" aria-label="Toggle sound">♫</button></div>
